@@ -1,0 +1,5 @@
+Knowledge Hub (resources.html): topic cards with search and category filters. Your index page now links to it in a new section and in the top menu.
+Two full articles on AEM Guides with DITA, and on AEM Guides versus AsciiDoc and Antora. The article reader is read.html.
+Documentation Assistant (chat.html): it shows its sources and says so when it can't find an answer. Without the Worker below it runs in "demo mode" and shows the best-matching passage instead of a generated answer.
+Backend sources in seven formats for a fictional product, the NovaGate G200: .md, .html, .pdf, .dita, .adoc, .csv and .json. Your articles are indexed too.
+Pipeline files: build_index.py builds the searchable index, worker.js is the GenAI part, and a GitHub Action rebuilds the index on every commit.
