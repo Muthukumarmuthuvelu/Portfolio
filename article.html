@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why AI Needs Knowledge Management First | Muthukumar Muthuvelu</title>
+<meta name="description" content="What technical documentation teams must fix before an AI assistant can answer well.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F7;--ink:#14222E;--mut:#54677A;--line:#D3DCE4;--t1:#BFD9D9;--t3:#2F8484;--t4:#0F6B6B;--now:#E3A02E}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.75 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:var(--t4)}
+:focus-visible{outline:3px solid var(--now);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--now);z-index:9}
+header{border-bottom:1px solid var(--line)}
+.w{max-width:720px;margin:0 auto;padding:0 24px}
+header .w{display:flex;justify-content:space-between;height:56px;align-items:center;font-size:15px}
+header a{text-decoration:none;font-weight:600;color:var(--ink)}
+h1{font-size:clamp(34px,6vw,54px);margin:48px 0 14px}
+.by{color:var(--mut);font-size:15px;margin-bottom:34px}
+.lede{font-size:20px;color:#2c3d4c}
+h2{font-size:30px;margin:52px 0 12px}
+h3{font-size:21px;margin:28px 0 6px;color:var(--t4)}
+p{margin-bottom:14px}
+figure{margin:30px 0}
+figure svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:6px}
+figcaption{font-size:14.5px;color:var(--mut);margin-top:8px}
+ul{padding-left:22px;margin-bottom:14px}li{margin-bottom:6px}
+.end{margin-top:52px;padding:22px 24px;background:#fff;border-left:4px solid var(--now);border-radius:4px}
+.btn{display:inline-block;margin-top:6px;padding:11px 20px;background:var(--ink);color:#fff;border-radius:6px;font-weight:600;text-decoration:none}
+.btn:hover{background:var(--t4)}
+footer{padding:36px 0 60px;color:var(--mut);font-size:14px}
+svg text{font-family:"Instrument Sans",system-ui,sans-serif;font-size:14px}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="w"><a href="index.html">&larr; Back to profile</a><span>3 min read</span></div></header>
+<main class="w">
+<h1>Why AI needs knowledge management first</h1>
+<p class="by">By Muthukumar Muthuvelu, September 2026</p>
+<p class="lede">AI assistants are only as reliable as the content behind them. In technical documentation, that content usually lives across guides, release notes, knowledge articles and wikis, often duplicated and out of date. Before an AI tool can answer a customer question well, someone has to make the underlying knowledge trustworthy. That work is knowledge management.</p>
+
+<h2>The problem: AI amplifies what it finds</h2>
+<p>A retrieval model cannot tell which page is current or which one is authoritative. Duplicates, conflicting steps and vague titles come back as confident but wrong answers. Poor content stops being a small annoyance and becomes a visible failure in front of the customer.</p>
+<figure>
+<svg viewBox="0 0 720 220" role="img" aria-labelledby="f1">
+<title id="f1">Scattered content passes through knowledge management to produce accurate AI answers</title>
+<g transform="rotate(-6 90 60)"><rect x="30" y="34" width="120" height="44" rx="5" fill="#F3D9A8"/><text x="90" y="61" text-anchor="middle" fill="#221600">Duplicates</text></g>
+<g transform="rotate(4 90 110)"><rect x="30" y="92" width="120" height="44" rx="5" fill="#F3D9A8"/><text x="90" y="119" text-anchor="middle" fill="#221600">Outdated pages</text></g>
+<g transform="rotate(-3 90 165)"><rect x="30" y="148" width="120" height="44" rx="5" fill="#F3D9A8"/><text x="90" y="175" text-anchor="middle" fill="#221600">No metadata</text></g>
+<path d="M170 110h56m-10-8 10 8-10 8" stroke="#14222E" stroke-width="2.5" fill="none"/>
+<rect x="240" y="40" width="240" height="140" rx="8" fill="#0F6B6B"/>
+<text x="360" y="84" text-anchor="middle" fill="#fff" font-weight="600" style="font-size:17px">Knowledge management</text>
+<text x="360" y="116" text-anchor="middle" fill="#dff0f0">Structure and taxonomy</text>
+<text x="360" y="140" text-anchor="middle" fill="#dff0f0">Metadata and governance</text>
+<text x="360" y="164" text-anchor="middle" fill="#dff0f0">Lifecycle and reuse</text>
+<path d="M496 110h56m-10-8 10 8-10 8" stroke="#14222E" stroke-width="2.5" fill="none"/>
+<rect x="566" y="60" width="130" height="100" rx="8" fill="#BFD9D9"/>
+<text x="631" y="102" text-anchor="middle" fill="#0c3535" font-weight="600" style="font-size:17px">AI answers</text>
+<text x="631" y="128" text-anchor="middle" fill="#0c3535">Current, accurate</text>
+</svg>
+<figcaption>Figure 1. Governed knowledge is the layer between messy content and reliable AI answers.</figcaption>
+</figure>
+
+<h2>Four foundations of AI-ready knowledge</h2>
+<h3>Structure</h3>
+<p>Structured authoring splits content into topics with one purpose each: a task, a concept or a reference. Small, consistent chunks are easier to retrieve and quote accurately than long, mixed documents.</p>
+<h3>Taxonomy and metadata</h3>
+<p>Tags for product, version, audience and content type let a system filter before it answers. A question about firmware 3.2 should never be answered from a 2.0 installation guide.</p>
+<figure>
+<svg viewBox="0 0 720 190" role="img" aria-labelledby="f2">
+<title id="f2">A question is narrowed by metadata filters to one correct installation guide</title>
+<rect x="16" y="60" width="170" height="70" rx="8" fill="#fff" stroke="#14222E" stroke-width="2"/>
+<text x="101" y="90" text-anchor="middle">"How do I install</text><text x="101" y="110" text-anchor="middle">firmware 3.2?"</text>
+<path d="M196 95h34m-9-7 9 7-9 7" stroke="#14222E" stroke-width="2.5" fill="none"/>
+<rect x="240" y="22" width="220" height="30" rx="15" fill="#BFD9D9"/><text x="350" y="42" text-anchor="middle" fill="#0c3535">Product: Gateway</text>
+<rect x="240" y="60" width="220" height="30" rx="15" fill="#7FB3B3"/><text x="350" y="80" text-anchor="middle" fill="#08302f">Version: 3.2</text>
+<rect x="240" y="98" width="220" height="30" rx="15" fill="#2F8484"/><text x="350" y="118" text-anchor="middle" fill="#fff">Audience: installer</text>
+<rect x="240" y="136" width="220" height="30" rx="15" fill="#0F6B6B"/><text x="350" y="156" text-anchor="middle" fill="#fff">Type: task</text>
+<path d="M470 95h44m-9-7 9 7-9 7" stroke="#14222E" stroke-width="2.5" fill="none"/>
+<rect x="524" y="55" width="180" height="80" rx="8" fill="#E3A02E"/>
+<text x="614" y="90" text-anchor="middle" fill="#221600" font-weight="600">Install guide 3.2</text><text x="614" y="112" text-anchor="middle" fill="#221600">one right answer</text>
+</svg>
+<figcaption>Figure 2. Metadata filters narrow the search before the AI writes a single word.</figcaption>
+</figure>
+<h3>Governance</h3>
+<p>Named owners, review workflows and templates keep content accurate as products change. Governance answers a question no model can: who is responsible when this changes?</p>
+<h3>Lifecycle</h3>
+<p>Content should be created, reviewed, reused and retired on purpose. Removing an outdated page from the index is as valuable as publishing a new one.</p>
+<figure>
+<svg viewBox="0 0 720 150" role="img" aria-labelledby="f3">
+<title id="f3">Content lifecycle: create, review, publish, reuse, retire, then back to create</title>
+<g fill="#0F6B6B"><rect x="14" y="20" width="118" height="48" rx="8"/><rect x="153" y="20" width="118" height="48" rx="8"/><rect x="292" y="20" width="118" height="48" rx="8"/><rect x="431" y="20" width="118" height="48" rx="8"/></g>
+<rect x="570" y="20" width="136" height="48" rx="8" fill="#E3A02E"/>
+<g fill="#fff" text-anchor="middle"><text x="73" y="50">Create</text><text x="212" y="50">Review</text><text x="351" y="50">Publish</text><text x="490" y="50">Reuse</text></g>
+<text x="638" y="50" text-anchor="middle" fill="#221600">Retire</text>
+<g stroke="#14222E" stroke-width="2.5" fill="none"><path d="M134 44h17m-6-6 6 6-6 6"/><path d="M273 44h17m-6-6 6 6-6 6"/><path d="M412 44h17m-6-6 6 6-6 6"/><path d="M551 44h17m-6-6 6 6-6 6"/><path d="M638 72v40H73V74m-6 6 6-6 6 6" stroke-dasharray="6 5"/></g>
+<text x="360" y="136" text-anchor="middle" fill="#54677A">Every cycle improves what the AI can find</text>
+</svg>
+<figcaption>Figure 3. A lifecycle keeps knowledge current instead of letting it decay.</figcaption>
+</figure>
+
+<h2>Reuse beats duplication</h2>
+<p>Single-sourcing means writing once and publishing everywhere. One source of truth produces one consistent answer, whether a customer reads a guide, searches the help centre or asks an assistant. Every copied paragraph is another chance for the AI to quote the wrong one.</p>
+
+<h2>What changes for documentation teams</h2>
+<p>The writer's role shifts from producing pages to curating knowledge. Writers become owners of the structure, metadata and quality signals that AI depends on. Product owners and knowledge managers can prioritise this work the way they manage a backlog: by value, risk and effort. Teams that treat content as a product, with a roadmap, owners and measures, adapt fastest.</p>
+
+<h2>How to start</h2>
+<h3>Audit</h3>
+<p>Inventory your content. Find duplicates, missing owners and pages nobody has touched in years.</p>
+<h3>Standardise</h3>
+<p>Agree on topic types, templates, taxonomy and metadata. Automate checks where you can.</p>
+<h3>Measure</h3>
+<p>Track search success, answer quality and revision cycles. In my own teams, governance and workflow standardisation cut documentation revision cycles by about 40%, which frees time for work that improves content.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+<li>Buying an AI tool first and cleaning content later.</li>
+<li>Tagging inconsistently, so filters cannot be trusted.</li>
+<li>Migrating everything, including content no one should see.</li>
+<li>Treating governance as a one-time project instead of a routine.</li>
+</ul>
+
+<h2>The takeaway</h2>
+<p>AI does not replace knowledge management. It raises the stakes. Teams that invest in structure, metadata, governance and lifecycle give assistants a foundation customers can trust. The tool is the easy part; the knowledge is the work.</p>
+
+<div class="end">
+<p><strong>Curious where your own content stands?</strong> Try the AI-readiness checker on my profile.</p>
+<a class="btn" href="index.html#checker">Open the checker</a>
+</div>
+</main>
+<footer><div class="w">Muthukumar Muthuvelu, Product Owner and Knowledge Management Leader. <a href="index.html#contact">Get in touch</a></div></footer>
+<script>
+addEventListener('scroll',function(){var d=document.documentElement,h=d.scrollHeight-d.clientHeight;document.getElementById('bar').style.width=(h>0?d.scrollTop/h*100:0)+'%'},{passive:true});
+</script>
+</body>
+</html>
