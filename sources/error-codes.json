@@ -1,0 +1,3 @@
+[{"code":"E101","meaning":"No network link detected","action":"Check the Ethernet cable and the switch port."},
+{"code":"E204","meaning":"Cloud authentication failed","action":"Check the date and time settings and re-enter the cloud credentials."},
+{"code":"E310","meaning":"Configuration file is corrupt","action":"Restore a saved backup or perform a factory reset."}]

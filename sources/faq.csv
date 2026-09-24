@@ -1,0 +1,5 @@
+question,answer,product,version
+What is the default IP address?,The default IP address is 192.168.1.1.,NovaGate G200,2.4
+Does the gateway support Wi-Fi?,"Yes. It supports 2.4 GHz and 5 GHz Wi-Fi.",NovaGate G200,2.4
+Which protocols are supported?,"Modbus TCP, MQTT over TLS 1.3, and BACnet/IP.",NovaGate G200,2.4
+How long is the warranty?,The warranty is 3 years from the purchase date.,NovaGate G200,2.4

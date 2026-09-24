@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<task id="reset-gateway"><title>Reset the NovaGate G200 to factory settings</title>
+<shortdesc>Use a factory reset to restore default settings when you cannot sign in or after a failed update.</shortdesc>
+<taskbody><prereq>Back up your configuration first. A reset erases all settings.</prereq>
+<steps><step><cmd>Power on the gateway and wait for the green power LED.</cmd></step>
+<step><cmd>Press and hold the recessed RESET button for 10 seconds.</cmd><info>Release the button when the LED turns solid blue.</info></step>
+<step><cmd>Wait about 2 minutes while the gateway restarts with default settings.</cmd></step></steps>
+<result>The gateway is available again at 192.168.1.1 with default settings.</result></taskbody></task>
