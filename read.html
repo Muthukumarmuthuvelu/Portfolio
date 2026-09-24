@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Knowledge Hub | Muthukumar Muthuvelu</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css">
+<style>
+main{max-width:720px;margin:0 auto;padding:0 24px;font-size:18px;line-height:1.75}
+h1{font-size:clamp(32px,5.5vw,48px);margin:44px 0 12px}h2{font-size:28px;margin:44px 0 10px}
+p,ul,ol{margin-bottom:14px}ul,ol{padding-left:22px}li{margin-bottom:6px}
+.by{color:var(--mut);font-size:15px;margin-bottom:28px}
+.end{margin:48px 0;padding:22px 24px;background:#fff;border-left:4px solid var(--now);border-radius:4px}
+</style></head><body>
+<header><div class="w"><a href="resources.html">&larr; All resources</a><a href="chat.html">Documentation Assistant</a></div></header>
+<main><span class="tag" id="cat"></span><h1 id="t">Loading...</h1><p class="by" id="by"></p><div id="body"></div>
+<div class="end"><p><strong>Want to test this content?</strong> These articles are indexed by the documentation assistant. Ask it a question about this topic.</p><a class="btn" href="chat.html">Open the assistant</a></div></main>
+<footer><div class="w">Muthukumar Muthuvelu, Product Owner and Knowledge Management Leader. <a href="index.html#contact">Get in touch</a></div></footer>
+<script>
+var a=(new URLSearchParams(location.search).get('a')||'');
+function inl(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\[(.+?)\]\((https?:[^)]+)\)/g,'<a href="$2">$1</a>')}
+function md(t){var o='',l=null;t.split('\n').forEach(function(x){var m;
+if(l&&!/^(- |\d+\. )/.test(x)){o+='</'+l+'>';l=null}
+if(m=x.match(/^## (.+)/))o+='<h2>'+inl(m[1])+'</h2>';
+else if(m=x.match(/^- (.+)/)){if(l!=='ul'){o+='<ul>';l='ul'}o+='<li>'+inl(m[1])+'</li>'}
+else if(m=x.match(/^\d+\. (.+)/)){if(l!=='ol'){o+='<ol>';l='ol'}o+='<li>'+inl(m[1])+'</li>'}
+else if(x.trim())o+='<p>'+inl(x)+'</p>'});return o+(l?'</'+l+'>':'')}
+if(!/^[a-z0-9-]+$/.test(a)){document.getElementById('t').textContent='Article not found'}
+else fetch('kb/'+a+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){
+var m=t.match(/^---\n([\s\S]*?)\n---\n/),f={};if(m){m[1].split('\n').forEach(function(l){var i=l.indexOf(':');f[l.slice(0,i).trim()]=l.slice(i+1).trim()});t=t.slice(m[0].length)}
+document.title=f.title+' | Muthukumar Muthuvelu';document.getElementById('t').textContent=f.title;document.getElementById('cat').textContent=f.category;
+document.getElementById('by').textContent='By Muthukumar Muthuvelu, '+f.minutes+' min read';document.getElementById('body').innerHTML=md(t)})
+.catch(function(){document.getElementById('t').textContent='Article not found'});
+</script></body></html>

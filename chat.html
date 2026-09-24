@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Documentation Assistant | Muthukumar Muthuvelu</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css">
+<style>
+h1{font-size:clamp(32px,5vw,48px);margin:40px 0 8px}.sub{color:var(--mut);max-width:64ch;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:1fr 330px;gap:32px;align-items:start}
+.chat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px}
+#log{height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding:4px}
+.msg{max-width:88%;padding:10px 14px;border-radius:10px;font-size:16px;line-height:1.55}
+.user{align-self:flex-end;background:var(--ink);color:#fff}.bot{align-self:flex-start;background:var(--bg)}
+.cites{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.cites a{font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:99px;background:#fff;text-decoration:none;color:var(--ink)}
+.cites a:hover{border-color:var(--t4)}
+.ty{font-size:11px;font-weight:700;text-transform:uppercase;background:var(--t1);color:#0c3535;border-radius:4px;padding:0 5px;margin-right:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chips button{padding:6px 12px;border:1px solid var(--line);border-radius:99px;background:#fff;font:inherit;font-size:14px;cursor:pointer}
+.chips button:hover{border-color:var(--t4)}
+.row{display:flex;gap:10px}.row input{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font:inherit}
+.mode{font-size:13.5px;color:var(--mut);margin-top:10px}
+aside h2{font-size:19px;margin:0 0 10px}aside ul{list-style:none;padding:0;margin:0 0 24px}
+aside li{font-size:14.5px;padding:7px 0;border-top:1px solid var(--line);display:flex;gap:8px;align-items:baseline}
+aside h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:14px 0 4px}
+aside ol{padding-left:20px;font-size:14.5px;color:#2c3d4c}aside ol li{border:0;display:list-item;padding:3px 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="w"><a href="index.html">&larr; Back to profile</a><nav><a href="resources.html">Knowledge Hub</a></nav></div></header>
+<main class="w"><h1>Documentation Assistant</h1>
+<p class="sub">A working demo of an AI-ready documentation assistant. It answers only from the indexed sources, shows where each answer came from, and says so when it cannot find one.</p>
+<div class="grid"><section class="chat"><div id="log" aria-live="polite"><div class="msg bot"><p>Hello. Ask me about the sample NovaGate G200 documentation or about AI-ready documentation practices.</p></div></div>
+<div class="chips" id="chips"></div>
+<div class="row"><input id="q" placeholder="Ask a question" aria-label="Your question" autocomplete="off"><button class="btn" id="go">Ask</button></div>
+<p class="mode" id="mode"></p></section>
+<aside><h2>Indexed sources</h2><div id="src"></div>
+<h2>How it works</h2><ol><li>Sources in many formats are converted to text and split into passages.</li><li>Your question retrieves the best-matching passages.</li><li>An AI model writes the answer from those passages only.</li><li>Sources are shown so every answer can be checked.</li></ol></aside></div></main>
+<footer><div class="w">The NovaGate G200 is a fictional product used for this demo.</div></footer>
+<script>
+var WORKER_URL=""; // paste your Cloudflare Worker address here to switch on generated answers
+var STOP=new Set('a an the is are was of to in on for and or how do does what which i my me it can with be by at from this that should'.split(' '));
+function tok(s){return (s.toLowerCase().match(/[a-z0-9.]+/g)||[]).map(function(w){w=w.replace(/\.+$/,'');return w.length>3?w.replace(/s$/,''):w}).filter(function(w){return w&&!STOP.has(w)})}
+var C=[],DF={},AVG=1,log=document.getElementById('log');
+function prep(ch){C=ch.map(function(c){c.t=tok(c.title+' '+c.title+' '+c.text);return c});C.forEach(function(c){new Set(c.t).forEach(function(w){DF[w]=(DF[w]||0)+1})});AVG=C.reduce(function(a,c){return a+c.t.length},0)/C.length}
+function search(q,k){var qt=Array.from(new Set(tok(q)));if(!qt.length)return[];var N=C.length,need=Math.max(1,Math.ceil(qt.length*.4));
+return C.map(function(c){var s=0,m=0,tf={};c.t.forEach(function(w){tf[w]=(tf[w]||0)+1});
+qt.forEach(function(w){var f=tf[w];if(!f)return;m++;var idf=Math.log(1+(N-DF[w]+.5)/(DF[w]+.5));s+=idf*f*2.5/(f+1.5*(.25+.75*c.t.length/AVG))});return{c:c,s:s,m:m}})
+.filter(function(x){return x.m>=need}).sort(function(a,b){return b.s-a.s}).filter(function(x,i,a){return x.s>=a[0].s*.35}).slice(0,k).map(function(x){return x.c})}
+function extract(q,h){var w=h.text.split(/\s+/);return w.slice(0,80).join(' ')+(w.length>80?' ...':'')}
+function add(role,text){var d=document.createElement('div');d.className='msg '+role;var p=document.createElement('p');p.textContent=text;d.appendChild(p);log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function cites(d,hits){var u=document.createElement('div'),g={};u.className='cites';hits.forEach(function(h,i){(g[h.href]=g[h.href]||{h:h,n:[]}).n.push(i+1)});
+Object.keys(g).forEach(function(k){var x=g[k],a=document.createElement('a');a.href=k;a.target='_blank';a.rel='noopener';var t=document.createElement('span');t.className='ty';t.textContent=x.h.type;a.append('['+x.n.join(',')+'] ',t,' '+x.h.title);u.appendChild(a)});d.appendChild(u);log.scrollTop=log.scrollHeight}
+async function ask(q){q=q.trim();if(!q||!C.length)return;add('user',q);var hits=search(q,4);
+if(!hits.length){add('bot','I could not find that in the documentation. Try asking about installation, resets, error codes, release notes, or AI-ready documentation with DITA and AEM.');return}
+var d=add('bot','Searching the documentation...'),ans=null;
+if(WORKER_URL){try{var r=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,chunks:hits.map(function(h){return{title:h.title,text:h.text}})})});if(r.ok)ans=(await r.json()).answer}catch(e){}}
+d.firstChild.textContent=ans||extract(q,hits[0]);cites(d,hits)}
+document.getElementById('go').onclick=function(){var i=document.getElementById('q');ask(i.value);i.value=''};
+document.getElementById('q').onkeydown=function(e){if(e.key==='Enter')document.getElementById('go').click()};
+['How do I factory reset the gateway?','What does error E101 mean?','What is new in version 2.4.0?','What is the operating temperature range?','Should I use Antora or AEM Guides?'].forEach(function(s){var b=document.createElement('button');b.textContent=s;b.onclick=function(){ask(s)};document.getElementById('chips').appendChild(b)});
+document.getElementById('mode').textContent=WORKER_URL?'GenAI mode: answers are written by an AI model from the retrieved passages.':'Demo mode: showing the best-matching passages. Connect the Worker to switch on generated answers.';
+fetch('chatbot/index.json').then(function(r){return r.json()}).then(function(d){prep(d.chunks);var docs={};d.chunks.forEach(function(c){docs[c.href]=docs[c.href]||{c:c,n:0};docs[c.href].n++});
+var by={};Object.keys(docs).forEach(function(k){var x=docs[k].c;(by[x.category]=by[x.category]||[]).push(x)});var box=document.getElementById('src');
+Object.keys(by).forEach(function(cat){var h=document.createElement('h3');h.textContent=cat;var ul=document.createElement('ul');by[cat].forEach(function(x){var li=document.createElement('li'),t=document.createElement('span');t.className='ty';t.textContent=x.type;li.append(t,x.title);ul.appendChild(li)});box.append(h,ul)});
+var p=document.createElement('p');p.className='mode';p.textContent='Index rebuilt '+d.generated+': '+d.chunks.length+' passages from '+Object.keys(docs).length+' sources.';p.style.marginBottom='24px';box.appendChild(p)});
+</script></body></html>
