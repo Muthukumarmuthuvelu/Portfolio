@@ -1,0 +1,12 @@
+[
+{"title":"Why AI needs knowledge management first","summary":"What documentation teams must fix before an AI assistant can answer well.","category":"Foundations","minutes":3,"href":"article.html"},
+{"title":"How AI-assisted documentation works in the field","summary":"How support engineers, partners and customers use AI answers day to day.","category":"Foundations","minutes":3},
+{"title":"How documentation teams should create AI-ready content","summary":"Authoring standards, metadata and review practices that make content reliable.","category":"Creation","minutes":3},
+{"title":"What to consider when developing content for a chatbot","summary":"Chunking, wording, versioning and guardrails for assistant-ready content.","category":"Creation","minutes":3},
+{"title":"How documentation drives product success","summary":"Adoption, support cost and customer confidence, and how to measure them.","category":"Business impact","minutes":3},
+{"title":"How documentation enables sales","summary":"Giving sales and channel partners answers they can trust and reuse.","category":"Business impact","minutes":3},
+{"title":"Documentation as the engine of training","summary":"Turning governed content into training that shortens time to productivity.","category":"Business impact","minutes":3},
+{"title":"Tools for GenAI-ready content creation","summary":"Authoring, review and indexing tools that fit a knowledge-assistant workflow.","category":"Platforms & tools","minutes":3},
+{"title":"Using AEM Guides and DITA to build content AI can use","summary":"Why DITA's topic structure suits AI retrieval, and what AEM Guides adds around it.","category":"Platforms & tools","minutes":3,"href":"read.html?a=aem-guides-dita-ai"},
+{"title":"AEM Guides or AsciiDoc and Antora?","summary":"A fair comparison of an enterprise DITA platform with an open-source docs-as-code stack.","category":"Platforms & tools","minutes":3,"href":"read.html?a=aem-vs-antora"}
+]
