@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muthukumar Muthuvelu | Product Owner &amp; Knowledge Management Leader</title>
+<meta name="description" content="Product Owner and Knowledge Management leader with 16 years across IoT, hardware, firmware, software and cloud products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F7;--ink:#14222E;--mut:#54677A;--line:#D3DCE4;--t1:#BFD9D9;--t2:#7FB3B3;--t3:#2F8484;--t4:#0F6B6B;--now:#E3A02E;--wrap:1080px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--now);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:rgba(242,245,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.logo{font:700 18px "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--mut)}nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1fr 230px;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:700}
+.role{margin-top:14px;font-size:19px;font-weight:600;color:var(--t4)}
+.lede{margin-top:20px;max-width:60ch;color:#2c3d4c}
+.cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid var(--ink)}
+.btn.p{background:var(--ink);color:#fff}.btn.p:hover{background:var(--t4);border-color:var(--t4)}
+.btn.s:hover{background:var(--ink);color:#fff}
+.photo{width:230px;aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:var(--t1);display:grid;place-items:center;font:700 64px "Bricolage Grotesque";color:var(--t4)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.sub{color:var(--mut);max-width:62ch;margin-bottom:36px}
+/* roadmap */
+.road{display:flex;gap:4px;align-items:stretch}
+.step{background:var(--c);color:var(--tc,#fff);padding:16px 14px 18px;min-width:0;border-radius:4px;transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*.12s)}
+.step b{display:block;font:600 15px/1.25 "Bricolage Grotesque",sans-serif}
+.step span{display:block;font-size:13.5px;line-height:1.4;margin-top:6px;opacity:.9}
+.step em{display:block;font-style:normal;font-size:13px;margin-top:10px;opacity:.85}
+.step.now{background:var(--now);color:#221600}
+@keyframes grow{from{opacity:0;transform:scaleX(.6)}to{opacity:1;transform:none}}
+.ends{display:flex;justify-content:space-between;margin-top:10px;font-size:14px;color:var(--mut)}
+.logos{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:28px}
+.logos div{background:#fff;border:1px solid var(--line);border-radius:6px;height:72px;display:grid;place-items:center;padding:12px;font:600 14px "Bricolage Grotesque",sans-serif;color:var(--mut);text-align:center}
+.logos img{max-width:100%;max-height:40px;object-fit:contain;display:block}
+/* pillars */
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 56px}
+.cols>div{border-left:3px solid var(--t3);padding-left:20px}
+.cols h3{font-size:22px;margin-bottom:10px}
+.cols p{font-size:16px;color:#2c3d4c}
+/* impact */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:8px}
+.stats b{display:block;font:700 38px "Bricolage Grotesque";color:var(--t4)}
+.stats span{font-size:15px;color:var(--mut);line-height:1.4;display:block}
+/* work */
+.work{display:grid;grid-template-columns:200px 1fr;gap:20px 40px;padding:26px 0;border-top:1px solid var(--line)}
+.work:first-of-type{border-top:0;padding-top:0}
+.work h3{font-size:20px}
+.work ul{padding-left:18px;color:#2c3d4c}
+.work li{margin-bottom:8px;font-size:16.5px}
+/* skills */
+.sk{display:grid;grid-template-columns:200px 1fr;gap:14px 40px;padding:16px 0;border-top:1px solid var(--line)}
+.sk:first-of-type{border-top:0}
+.sk h3{font-size:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:14.5px;padding:4px 12px;border:1px solid var(--line);border-radius:99px;background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.two h3{font-size:22px;margin-bottom:14px}
+.two li{margin-bottom:10px;list-style:none;padding-left:0}
+.two small{display:block;color:var(--mut);font-size:14.5px}
+.contact a.big{font:700 clamp(24px,4vw,40px) "Bricolage Grotesque";text-decoration:none;border-bottom:3px solid var(--now)}
+.contact p{margin-top:22px;color:var(--mut)}
+.contact p a{color:var(--ink);font-weight:600}
+footer{padding:28px 0 40px;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+.step{min-width:150px;overflow-wrap:anywhere;border:0;font:inherit;text-align:left;cursor:pointer;transition:transform .15s}
+.step:hover{transform:translateY(-3px)}
+.step[aria-selected=true]{box-shadow:0 0 0 3px var(--ink)}
+.detail{margin-top:22px;padding:20px 24px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--now);border-radius:4px}
+.detail h3{font-size:20px;margin-bottom:6px}.detail p{font-size:16.5px;color:#2c3d4c;max-width:70ch}
+.hint{margin-top:14px;font-size:14px;color:var(--mut)}
+.chk{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+.chk label{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line);cursor:pointer;font-size:16.5px;line-height:1.45}
+.chk input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--t4)}
+.score{position:sticky;top:80px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px}
+.score .n{font:700 44px "Bricolage Grotesque";color:var(--t4)}
+.meter{height:10px;border-radius:9px;background:var(--line);overflow:hidden;margin:10px 0 16px}
+.meter i{display:block;height:100%;width:0;background:var(--t4);transition:width .4s}
+.score p{font-size:16px;color:#2c3d4c;margin-bottom:14px}
+.feat{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:center}
+.feat svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:6px;background:#fff}
+.sr{position:absolute;left:-9999px}
+@media(max-width:1000px){.road{flex-direction:column}.step{flex:none!important;min-width:0}.logos{grid-template-columns:repeat(3,1fr)}.chk,.feat{grid-template-columns:1fr;gap:28px}.score{position:static}}
+.road{gap:14px;align-items:stretch}
+.phase{display:flex;flex-direction:column;min-width:0}
+.psteps{display:flex;gap:4px;align-items:stretch;flex:1}
+.psteps .step{min-width:140px;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch}
+.plabel{margin-top:10px;padding:10px 14px 12px;border:3px solid var(--ink);border-top:0;border-radius:0 0 10px 10px;text-align:center;position:relative}
+.plabel b{display:block;font:700 22px "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.plabel span{display:block;font-size:14.5px;line-height:1.4;color:var(--mut);margin-top:2px}
+.phase:nth-child(3) .plabel{border-color:var(--now)}
+.phase:nth-child(1) .plabel{border-color:var(--t2)}
+.phase:nth-child(2) .plabel{border-color:var(--t4)}
+.chip{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:4px;height:44px;padding:5px 8px;margin-bottom:12px}
+.chip img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+@media(max-width:1000px){.road{flex-direction:column;align-items:stretch;gap:26px}.phase{flex:none!important}.psteps{flex-direction:column}.psteps .step{flex:none!important;min-width:0}.plabel{order:-1;margin:0 0 10px;text-align:left;border:0;border-left:5px solid var(--ink);border-radius:0;padding:2px 0 2px 14px}.phase:nth-child(1) .plabel{border-color:var(--t2)}.phase:nth-child(2) .plabel{border-color:var(--t4)}.phase:nth-child(3) .plabel{border-color:var(--now)}.chip{width:150px}}
+@media(max-width:860px){
+ .hero{grid-template-columns:1fr;gap:32px;padding-top:44px}.photo{width:170px;order:-1}
+ .road{flex-direction:column}.step{flex:none!important}
+ .logos{grid-template-columns:repeat(3,1fr)}
+ .cols,.two{grid-template-columns:1fr;gap:28px}.stats{grid-template-columns:1fr 1fr}
+ .work,.sk{grid-template-columns:1fr;gap:10px}nav{gap:14px;font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.step{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">MM</a>
+<nav aria-label="Main"><a href="#journey">Journey</a><a href="#checker">Checker</a><a href="article.html">Article</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1>Muthukumar Muthuvelu</h1>
+<p class="role">Product Owner and Knowledge Management Leader</p>
+<p class="lede">I turn business and customer needs into product requirements and governed knowledge that people, and increasingly AI, can trust and find. Sixteen years across IoT, hardware, firmware, software and cloud, leading global teams from Bengaluru.</p>
+<div class="cta">
+<a class="btn p" href="docs/Muthukumar_Muthuvelu_CV.pdf">Download CV</a>
+<a class="btn s" href="#contact">Get in touch</a>
+</div>
+</div>
+<div class="photo"><img src="images/profile.jpg" alt="Portrait of Muthukumar Muthuvelu" onerror="this.remove();this.parentNode.textContent='MM'"></div>
+</div>
+
+<section id="journey"><div class="wrap">
+<h2>From writing the product to owning it</h2>
+<p class="sub">Each step widened the scope: first the content, then the team, then the roadmap and the knowledge strategy behind it.</p>
+<div class="road" role="tablist" aria-label="Career roles">
+<div class="phase" style="flex:1"><div class="psteps"><button type="button" role="tab" class="step" style="--i:0;--c:var(--t1);--tc:#0c3535;flex:1"><i class="chip"><img src="images/logos/kingfisher.png" alt="Kingfisher Airlines logo" onerror="this.parentNode.remove()"></i><b>Trainee Technician</b><span>Kingfisher Airlines</span><em>2009</em></button><button type="button" role="tab" class="step" style="--i:1;--c:var(--t2);--tc:#08302f;flex:1.2"><i class="chip"><img src="images/logos/cades-studec.png" alt="Cades Studec logo" onerror="this.parentNode.remove()"></i><b>Technical Writer</b><span>Cades Studec</span><em>Sep 2010 to Sep 2015</em></button></div><div class="plabel"><b>Craft</b><span>Learning the domain and mastering the content</span></div></div>
+<div class="phase" style="flex:1"><div class="psteps"><button type="button" role="tab" class="step" style="--i:2;--c:var(--t3);flex:1"><i class="chip"><img src="images/logos/epiroc.png" alt="Epiroc logo" onerror="this.parentNode.remove()"></i><b>Project Leader</b><span>Epiroc</span><em>Sep 2015 to Jan 2021</em></button><button type="button" role="tab" class="step" style="--i:3;--c:var(--t3);flex:1"><i class="chip"><img src="images/logos/aruba.png" alt="Aruba, an HPE company logo" onerror="this.parentNode.remove()"></i><b>Information Developer Specialist</b><span>Aruba, an HPE company</span><em>Jan 2021 to Dec 2022</em></button></div><div class="plabel"><b>Lead</b><span>Running projects, vendors and information models</span></div></div>
+<div class="phase" style="flex:1"><div class="psteps"><button type="button" role="tab" class="step" style="--i:4;--c:var(--t4);flex:1"><i class="chip"><img src="images/logos/nokia.png" alt="Nokia logo" onerror="this.parentNode.remove()"></i><b>Customer Documentation Leader</b><span>Nokia</span><em>Dec 2022 to Apr 2024</em></button><button type="button" role="tab" class="step now" style="--i:5;flex:1"><i class="chip"><img src="images/logos/signify.png" alt="Signify logo" onerror="this.parentNode.remove()"></i><b>Group Leader (Manager)</b><span>Signify</span><em>Apr 2024 to present</em></button></div><div class="plabel"><b>Own and govern</b><span>Owning the product, the roadmap and the knowledge strategy</span></div></div>
+</div>
+<p class="hint">Select a role to see what that stage was about.</p>
+<div class="detail" id="detail" role="tabpanel" aria-live="polite"></div>
+</div></section>
+
+<section id="focus"><div class="wrap">
+<h2>What I bring to a leadership role</h2>
+<p class="sub">Four connected strengths that show up in every team I have run.</p>
+<div class="cols">
+<div><h3>Product ownership</h3><p>Requirements, user stories and acceptance criteria that turn stakeholder needs into roadmap delivery. Backlog prioritisation, sprint planning and release readiness for hardware and WebUI/cloud products, with firmware, software and cloud dependencies coordinated in JIRA.</p></div>
+<div><h3>Knowledge management</h3><p>Information architecture, taxonomy, metadata, review workflows and lifecycle management. Structured authoring and reusable content models make enterprise knowledge governed, consistent and easy to find.</p></div>
+<div><h3>AI-ready content</h3><p>Standardised structures, less duplication and better retrieval so trusted knowledge can feed enterprise search and GenAI-enabled experiences. This is the capability I am building now.</p></div>
+<div><h3>Partner enablement</h3><p>Working with Sales and channel teams to turn complex product capabilities into clear, actionable enablement content. Global technical training, knowledge-sharing programmes and onboarding support help partners and customers adopt products faster and reach productivity sooner.</p></div>
+</div>
+</div></section>
+
+<section id="impact"><div class="wrap">
+<h2>Impact</h2>
+<p class="sub">Measured outcomes from leading global content and delivery teams.</p>
+<div class="stats">
+<div><b data-n="40" data-pre="~" data-suf="%">~40%</b><span>fewer documentation revision cycles through governance and workflow standardisation</span></div>
+<div><b data-n="15" data-suf="+">15+</b><span>employees and vendors led across customer, developer, installation and training content</span></div>
+<div><b data-n="25" data-suf="+">25+</b><span>people trained and mentored in structured authoring and documentation standards</span></div>
+<div><b data-n="16">16</b><span>years across IoT, hardware, firmware, software and cloud products</span></div>
+</div>
+</div></section>
+
+<section id="checker"><div class="wrap">
+<h2>Is your content AI-ready?</h2>
+<p class="sub">Tick what is true for your team today. Nothing is stored or sent anywhere.</p>
+<div class="chk">
+<fieldset style="border:0;padding:0"><legend class="sr">AI-readiness checklist</legend>
+<label><input type="checkbox">Content is written as structured topics: tasks, concepts and references</label>
+<label><input type="checkbox">Every topic is tagged with product, version and audience metadata</label>
+<label><input type="checkbox">There is one source of truth; content is reused, not copied</label>
+<label><input type="checkbox">Each content set has a named owner and a review workflow</label>
+<label><input type="checkbox">Outdated content is retired on a schedule</label>
+<label><input type="checkbox">Templates and content standards are enforced in review</label>
+</fieldset>
+<div class="score" aria-live="polite">
+<div class="n"><span id="sn">0</span> of 6</div>
+<div class="meter"><i id="bar"></i></div>
+<p id="res">Tick the boxes that apply to see your result.</p>
+<a class="btn s" href="article.html">Read why these matter</a>
+</div></div>
+</div></section>
+
+<section id="article"><div class="wrap feat">
+<a href="article.html" aria-label="Read the article"><svg viewBox="0 0 320 180" role="img" aria-label="Diagram: messy content becomes governed knowledge, then AI answers"><rect x="14" y="60" width="78" height="60" rx="5" fill="#F3D9A8"/><text x="53" y="94" text-anchor="middle" font-size="12" fill="#221600">Scattered</text><text x="53" y="109" text-anchor="middle" font-size="12" fill="#221600">content</text><path d="M98 90h30m-7-6 7 6-7 6" stroke="#14222E" stroke-width="2" fill="none"/><rect x="134" y="50" width="78" height="80" rx="5" fill="#0F6B6B"/><text x="173" y="86" text-anchor="middle" font-size="12" fill="#fff">Knowledge</text><text x="173" y="102" text-anchor="middle" font-size="12" fill="#fff">management</text><path d="M218 90h30m-7-6 7 6-7 6" stroke="#14222E" stroke-width="2" fill="none"/><rect x="254" y="60" width="54" height="60" rx="5" fill="#BFD9D9"/><text x="281" y="94" text-anchor="middle" font-size="12" fill="#0c3535">AI</text><text x="281" y="109" text-anchor="middle" font-size="12" fill="#0c3535">answers</text></svg></a>
+<div><h2>Why AI needs knowledge management first</h2>
+<p class="sub" style="margin-bottom:22px">A three-minute read on what technical documentation teams must fix before an AI assistant can answer well.</p>
+<a class="btn p" href="article.html">Read the article</a></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>Selected work</h2>
+<p class="sub">What I have built and led.</p>
+<div class="work"><h3>Enterprise content platform</h3><ul>
+<li>Led the evaluation and migration from open-source documentation tooling to Adobe Experience Manager (AEM) Guides, giving the organisation a scalable, governed content ecosystem.</li>
+<li>Set up templates, peer reviews, compliance checks and content standards to raise consistency and quality.</li></ul></div>
+<div class="work"><h3>Knowledge governance</h3><ul>
+<li>Established governance practices covering information architecture, taxonomy, metadata, reusable content models and review workflows.</li>
+<li>Built reusable knowledge assets: knowledge articles, troubleshooting and installation guides, runbooks, training modules, product documentation and release content.</li></ul></div>
+<div class="work"><h3>Global delivery leadership</h3><ul>
+<li>Coordinated documentation and CI/CD feature releases for integrated product launches.</li>
+<li>Managed schedules, risks, vendor dependencies and delivery KPIs; built dashboards and workflows that improved visibility and accountability.</li>
+<li>Partnered with Sales and channel teams to simplify complex capabilities and strengthen partner enablement.</li></ul></div>
+<div class="work"><h3>Adoption and enablement</h3><ul>
+<li>Created customer-centred documentation and targeted training that supported onboarding and shortened time to productivity.</li>
+<li>Ran knowledge-sharing programmes and continuous learning initiatives to strengthen product adoption.</li></ul></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills and tools</h2>
+<p class="sub">&nbsp;</p>
+<div class="sk"><h3>Product</h3><div class="tags"><span>Product strategy and roadmaps</span><span>Product ownership</span><span>Backlog prioritisation</span><span>Requirements and user stories</span><span>Agile / Scrum</span><span>KPIs and operational metrics</span></div></div>
+<div class="sk"><h3>Knowledge management</h3><div class="tags"><span>Knowledge products</span><span>Information architecture</span><span>Taxonomy</span><span>Metadata</span><span>Content governance</span><span>Knowledge lifecycle</span><span>AI-ready content</span><span>Content reuse and discoverability</span></div></div>
+<div class="sk"><h3>Leadership</h3><div class="tags"><span>Stakeholder management</span><span>Cross-functional leadership</span><span>Global team leadership</span><span>Vendor management</span><span>Executive communication</span><span>Change and adoption</span></div></div>
+<div class="sk"><h3>Platforms</h3><div class="tags"><span>Adobe Experience Manager</span><span>JIRA</span><span>Confluence</span><span>Figma</span><span>SAP</span><span>SharePoint</span><span>AWS S3</span><span>Bitbucket</span><span>Perforce</span><span>SCHEMA ST4</span><span>Antora</span><span>XMetaL Author</span><span>MadCap Flare</span><span>PTC Arbortext</span><span>Adobe Illustrator and Photoshop</span><span>Snagit</span></div></div>
+</div></section>
+
+<section id="learning"><div class="wrap two">
+<div><h2 style="font-size:28px">Education</h2>
+<ul><li>MBA, Systems<small>Bharathiar University, 2014</small></li>
+<li>Engineering in Aircraft Maintenance<small>VSM Aerospace, 2009</small></li></ul></div>
+<div><h2 style="font-size:28px">Certifications</h2>
+<ul><li>Professional Scrum Product Owner I (Bootcamp)<small>2026</small></li>
+<li>IoT Overview; Leveraging IoT for Successful Digital Transformation<small>Signify, 2026</small></li>
+<li>iLead leadership training<small>Signify, 2025</small></li>
+<li>Advanced technical writing certification<small>Tech Total, 2014</small></li></ul></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Let's talk</h2>
+<p class="sub">Open to product ownership and knowledge leadership conversations.</p>
+<a class="big" href="mailto:Kumar2930@gmail.com">Kumar2930@gmail.com</a>
+<p><a href="tel:+918296923667">+91 8296923667</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/muthukumar-muthuvelu-aa5920a8">LinkedIn</a> &nbsp;|&nbsp; Bengaluru, Karnataka, India</p>
+</div></section>
+</main>
+<footer><div class="wrap">&copy; 2026 Muthukumar Muthuvelu</div></footer>
+<script>
+(function(){
+var D=[["Trainee Technician, Kingfisher Airlines (2009)","A technical, procedure-driven start after studying Aircraft Maintenance Engineering at VSM Aerospace. This is where the habit of precision began."],
+["Technical Writer, Cades Studec (2010 to 2015)","Moved into technical communication and structured authoring. Completed an advanced technical writing certification and an MBA in Systems in 2014."],
+["Project Leader, Epiroc (2015 to 2021)","Stepped from writing to leading: planning schedules, managing risks and vendor dependencies, and keeping stakeholders aligned across global initiatives."],
+["Information Developer Specialist, Aruba (2021 to 2022)","Deepened the focus on information architecture, structured authoring and content standards at enterprise scale."],
+["Customer Documentation Leader, Nokia (2022 to 2024)","Led customer documentation with growing responsibility for global teams, vendors and coordinated release readiness."],
+["Group Leader, Signify (2024 to present)","Leading a global team of employees and vendors, acting as Product Owner for hardware and WebUI/cloud releases, and building governed, AI-ready knowledge with GenAI-enabled search and retrieval in view."]];
+var tabs=[].slice.call(document.querySelectorAll('.step')),box=document.getElementById('detail');
+function show(i){tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i)});box.innerHTML='';var h=document.createElement('h3'),p=document.createElement('p');h.textContent=D[i][0];p.textContent=D[i][1];box.appendChild(h);box.appendChild(p)}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)})});show(5);
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);if(rm)return;var el=e.target,n=+el.dataset.n,pre=el.dataset.pre||'',suf=el.dataset.suf||'',st=null;
+function f(t){st=st||t;var p=Math.min((t-st)/1200,1);el.textContent=pre+Math.round(n*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},{threshold:.6});
+[].forEach.call(document.querySelectorAll('[data-n]'),function(el){io.observe(el)});
+var cb=[].slice.call(document.querySelectorAll('#checker input')),bar=document.getElementById('bar'),sn=document.getElementById('sn'),res=document.getElementById('res');
+var M=["Tick the boxes that apply to see your result.","Early stage. Start with an audit of duplicates, owners and outdated pages.","Early stage. Start with an audit of duplicates, owners and outdated pages.","Foundations are forming. Metadata and governance are the next big gains.","Foundations are forming. Metadata and governance are the next big gains.","Nearly AI-ready. Close the last gap, then measure retrieval quality.","AI-ready foundations. Now track search success and answer quality."];
+function upd(){var n=cb.filter(function(c){return c.checked}).length;sn.textContent=n;bar.style.width=(n/cb.length*100)+'%';res.textContent=M[n]}
+cb.forEach(function(c){c.addEventListener('change',upd)});
+})();
+</script>
+</body>
+</html>
